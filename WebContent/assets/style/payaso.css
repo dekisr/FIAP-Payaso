@@ -1,0 +1,866 @@
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif');
+
+* {
+	box-sizing: border-box;
+	font-family: 'Bree Serif', serif;
+	line-height: 1.3;
+	text-decoration: none;
+	color: hsl(0, 60%, 10%);
+}
+
+html {
+	min-height: 100%;
+}
+
+body {
+	width: 100%;
+	background: linear-gradient(180deg, hsl(165, 35%, 45%) 20%,
+		hsl(185, 70%, 50%) 100%);
+	/* 	background: linear-gradient(180deg, hsl(205, 60%, 25%), */
+	/* 		hsl(195, 50%, 40%) 30%, hsl(185, 70%, 50%) 80%); */
+	/* 	background-color: hsl(190, 60%, 50%); */
+	/* 	background-color: hsl(170, 40%, 45%); */
+	background-color: hsl(185, 70%, 50%);
+	background-repeat: no-repeat;
+}
+
+body::before {
+	content: "";
+	width: 100%;
+	height: .5rem;
+	position: absolute;
+	top: 0;
+	z-index: 5;
+	background-color: hsl(185, 100%, 50%);
+	/* 	background-color: hsl(10, 20%, 40%); */
+}
+
+main {
+	width: 100%;
+	max-width: 1300px;
+	height: 100%;
+	position: absolute;
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+	background: url(../../images/bgtop.png) no-repeat;
+	background-size: contain;
+	background-position: center top;
+}
+
+.clearfix::before, .clearfix::after {
+	content: "";
+	display: table;
+}
+
+.clearfix::after {
+	clear: both;
+}
+
+nav {
+	width: 100%;
+	margin-top: .5rem;
+	padding: 1rem;
+	background-color: hsl(0, 60%, 10%);
+}
+
+nav .logo {
+	width: 8rem;
+	height: auto;
+}
+
+nav .bar {
+	width: 85%;
+	max-width: 1105px;
+	margin: auto;
+}
+
+nav .bar .menuBar {
+	display: none;
+}
+
+nav .menuBar {
+	display: block;
+	float: right;
+	font-size: 1.1rem;
+}
+
+nav .menuBar li {
+	display: inline-block;
+}
+
+nav .menuBar li a {
+	display: block;
+	padding: .5rem;
+	font-family: 'Bree Serif', serif;
+	color: hsl(0, 0%, 100%);
+	text-decoration: none;
+}
+
+nav .menuBar li a:hover {
+	border-radius: .3rem;
+	background-color: hsl(0, 100%, 65%);
+}
+
+nav .menuBar li .here {
+	border-radius: .3rem;
+	color: hsl(0, 60%, 10%);
+	background-color: hsl(55, 100%, 75%);
+}
+
+.divMenuDrop {
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 3;
+	background-color: hsla(0, 60%, 10%, .7);
+}
+
+.divMenuDrop.aberto {
+	display: block;
+}
+
+.menuDrop {
+	display: grid;
+	justify-items: center;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 15rem;
+	background-color: hsla(185, 100%, 50%, .9);
+}
+
+.btnMenuDrop {
+	position: fixed;
+	display: grid;
+	justify-items: center;
+	justify-content: center;
+	align-items: center;
+	align-items: center;
+	top: 1.3rem;
+	right: 1rem;
+	z-index: 5;
+	padding: 1rem;
+	width: 3rem;
+	height: 3rem;
+	background-color: white;
+	border-radius: 50%;
+	box-shadow: .1rem .1rem .2rem hsla(240, 15%, 20%, .9);
+}
+
+.menuDropList li {
+	display: block;
+	font-family: 'Bree Serif', serif;
+	font-size: 1.3rem;
+	line-height: 2rem;
+	color: hsl(0, 100%, 100%);
+}
+
+.content {
+	width: 100%;
+	max-width: 1300px;
+	margin: 0 auto;
+	padding-bottom: 2rem;
+	border-radius: 0;
+	background-color: hsl(0, 0%, 100%);
+}
+
+.content h1 {
+	margin: 1rem;
+	padding: .5rem;
+	font-size: 2rem;
+	text-shadow: .09rem .09rem 0 hsl(0, 0%, 40%);
+	border-radius: .7rem .7rem 0 0;
+	border-bottom: .2rem solid;
+}
+
+.content h2 {
+	font-size: 1.2rem;
+	text-shadow: .09rem .09rem 0 hsl(0, 0%, 40%);
+}
+
+.content h4 {
+	padding: .3rem;
+	font-size: 1.3rem;
+	color: hsl(0, 0%, 100%);
+	text-shadow: .09rem .09rem 0 hsl(0, 0%, 0%);
+	border-radius: .3rem;
+	background-color: hsl(0, 100%, 65%);
+}
+
+.content h4.medalhas {
+	display: none;
+}
+
+.content p {
+	margin: .3rem;
+}
+
+.content .left {
+	width: 20%;
+	float: left;
+	padding: 1rem 0 1rem 1rem;
+}
+
+.content .right {
+	width: 80%;
+	float: left;
+	text-align: center;
+	padding: 1rem;
+}
+
+.content .header {
+	width: 100%;
+	position: relative;
+	border-radius: 0;
+	background-color: hsl(100, 100%, 70%);
+}
+
+.content .headerUsr {
+	background-color: hsl(200, 100%, 50%);
+}
+
+.content .headerUsr h2 {
+	font-size: 1.2rem;
+	color: hsl(0, 0%, 100%);
+}
+
+.content .avatar {
+	width: 100%;
+	padding: .5rem;
+	border: .05rem solid hsl(0, 100%, 10%);
+	border-radius: .5rem;
+	background-color: hsl(0, 0%, 100%);
+}
+
+.content .desc {
+	width: 100%;
+	padding: 1rem;
+	text-align: left;
+	border-radius: .5rem;
+	background-color: hsl(125, 100%, 90%);
+}
+
+.content .desc p {
+	font-size: .9rem;
+	color: hsla(0, 60%, 10%, 0.8);
+}
+
+.content .descUsr {
+	background-color: hsl(200, 100%, 25%);
+}
+
+.content .descUsr p {
+	color: hsla(0, 0%, 100%, 0.8);
+}
+
+.content .data {
+	width: 100%;
+}
+
+.data .badges {
+	width: 100%;
+	text-align: center;
+	border-radius: .5rem;
+	background-color: hsl(55, 100%, 75%);
+}
+
+.badges img {
+	width: 80%;
+	margin-top: .5rem;
+}
+
+.data h2 {
+	margin: 2rem 2rem 1rem 2rem;
+}
+
+.data .stats {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.data .stats p {
+	padding: 1rem;
+	font-size: 1.2rem;
+	text-shadow: .09rem .09rem 0 hsl(0, 0%, 40%);
+	text-align: center;
+	border-radius: .5rem;
+	background-color: hsl(180, 100%, 80%);
+}
+
+.stats em {
+	display: block;
+	font-size: 2rem;
+}
+
+.data .aluno {
+	width: 20%;
+	min-width: 8rem;
+	display: inline-block;
+	margin: .3rem;
+	border-radius: 50%;
+	filter: grayscale(100%);
+}
+
+.data .aluno:hover {
+	filter: none;
+}
+
+.data .posts {
+	width: 90%;
+	display: block;
+	margin: .5rem auto;
+	padding: 1rem;
+	line-height: 1.5;
+	text-align: left;
+	word-wrap: break-word;
+	border-radius: .5rem;
+	color: hsl(0, 0%, 20%);
+	background-color: hsl(0, 0%, 90%);
+}
+
+.posts b {
+	font-weight: 600;
+}
+
+.data form {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.data textarea {
+	width: 100%;
+	display: block;
+	margin: 1rem auto;
+	padding: 1rem;
+	font-size: 1.5rem;
+	outline: none;
+	border: 1px solid hsl(0, 60%, 10%);
+	border-radius: .5rem;
+}
+
+.data input, select {
+	width: 100%;
+	display: block;
+	margin: 1rem auto;
+	padding: 1rem;
+	font-size: 1.5rem;
+	outline: none;
+	border: 1px solid hsl(0, 60%, 10%);
+	border-radius: .5rem;
+}
+
+.data button, .cancelar {
+	float: right;
+	margin-right: 1rem;
+	padding: .5rem;
+	font-size: 1.5rem;
+	border: 0;
+	outline: 0;
+	border-radius: .3rem;
+	background-color: hsl(0, 0%, 90%);
+}
+
+.data button:hover, .cancelar:hover {
+	float: right;
+	margin-right: 1rem;
+	padding: .5rem;
+	font-size: 1.5rem;
+	color: hsl(0, 0%, 100%);
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+	border-radius: .3rem;
+	background-color: hsl(0, 60%, 10%);
+}
+
+.data table {
+	width: 95%;
+	margin: 0 auto;
+	border-radius: .7rem;
+}
+
+.data td, th {
+	padding: 1rem;
+	text-align: center;
+	border: 1px solid hsl(0, 100%, 65%);
+	background-color: hsl(0, 0%, 90%);
+}
+
+.data th {
+	color: hsl(0, 0%, 100%);
+	font-size: 1.5rem;
+	background-color: hsl(0, 100%, 65%);
+}
+
+.data td {
+	font-size: 1.1rem;
+}
+
+.data .ask {
+	width: 95%;
+	margin: 0 auto 1rem auto;
+	padding: 1rem;
+	border-radius: .3rem;
+	background-color: hsl(30, 85%, 80%);
+}
+
+.data .navFaq li {
+	margin: .5rem;
+	padding: .3rem;
+	font-size: 1.3rem;
+	border-left: .3rem solid hsl(0, 100%, 65%);
+}
+
+.data .navFaq a {
+	text-decoration: none;
+}
+
+.data .payaso {
+	width: 30%;
+	min-width: 8rem;
+	margin: 2rem auto;
+	display: block;
+}
+
+.data .about {
+	display: block;
+	margin: 1rem;
+	text-align: center;
+}
+
+.data .about h2 {
+	padding-left: 1rem;
+	margin: 0;
+	font-size: 1.5rem;
+	text-align: left;
+	text-shadow: none;
+}
+
+.data .about p {
+	display: block;
+	padding: 0 1rem;
+	color: hsl(0, 0%, 20%);
+	font-size: 1.1rem;
+	line-height: 1.5;
+	text-align: left;
+	margin-bottom: 1rem;
+}
+
+.data .about .team {
+	width: 15%;
+	min-width: 8rem;
+	display: inline-block;
+	margin: 1rem;
+	border-radius: 50%;
+	filter: grayscale(100%);
+}
+
+.data .about .team:hover {
+	filter: none;
+}
+
+.data .exam {
+	width: 95%;
+}
+
+.data .timer {
+	width: 95%;
+	margin: 0 auto 1rem auto;
+	padding: 1rem;
+	font-size: 1.5rem;
+	text-align: center;
+	border-radius: .3rem;
+	background-color: hsl(180, 100%, 80%);
+}
+
+.data .homeB1 {
+	margin: 1rem;
+	padding: 1rem;
+	border-radius: .5rem;
+	background: url(../../images/homeBan.png) no-repeat;
+	background-size: cover;
+	background-position: right;
+}
+
+.data .homeB1 p {
+	width: 100%;
+	display: block;
+	padding: 1rem;
+	color: hsl(0, 0%, 100%);
+	font-family: 'Carter One', cursive;
+	font-size: 1.5rem;
+	text-align: center;
+	text-shadow: .09rem .09rem 0 hsl(0, 0%, 0%);
+	border-radius: .5rem;
+	background-color: hsla(200, 100%, 50%, 0.6);
+	/* 	background-color: hsla(335, 60%, 50%, 0.5); */
+}
+
+.data .homeB2 {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	justify-content: end;
+	padding: 1rem;
+	background: url(../../images/homeBan2.png) no-repeat;
+	background-size: contain;
+	background-position: left;
+	background-color: hsl(155, 100%, 50%);
+}
+
+.data .homeBox {
+	display: block;
+	margin: .5rem;
+	padding: 1rem;
+	font-size: 1.5rem;
+	text-align: center;
+	border-radius: .5rem;
+	background-color: hsl(125, 100%, 90%);
+}
+
+.data .homeBox img {
+	width: 5rem;
+	margin-top: 1rem;
+}
+
+.data .regUsr, .data .vamosAprender {
+	background-color: hsl(180, 100%, 80%);
+}
+
+.data .login, .data .bemVindo {
+	background-color: hsl(55, 100%, 75%);
+}
+
+.data .bemVindo, .data .vamosAprender, .data .seusPontos {
+	font-size: 1.3rem;
+}
+
+.data .bemVindo em, .data .vamosAprender em, .data .seusPontos em {
+	font-weight: 900;
+}
+
+.data .homeB3 {
+	margin: 1rem;
+	padding: 1rem;
+	text-align: center;
+}
+
+.data .homeB3 img {
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
+	width: 200px;
+}
+
+.data .homeB3 p {
+	font-size: 1rem;
+	line-height: 2;
+}
+
+footer {
+	width: 100%;
+	margin: 0 auto;
+	padding-bottom: 1rem;
+	text-align: center;
+}
+
+footer img {
+	margin: .5rem;
+	padding: .5rem;
+}
+
+footer p {
+	margin: .3rem;
+	padding: 0rem;
+	color: hsl(0, 0%, 20%);
+	font-size: .8rem;
+}
+
+/*chatbot*/
+header {
+	width: 100%;
+	text-align: center;
+	z-index: 1;
+}
+
+header .logo {
+	width: 15rem;
+	min-width: 10rem;
+}
+
+.menu {
+	display: none;
+	position: absolute;
+	top: .5rem;
+	right: 9%;
+	min-width: 12rem;
+	height: 3.5rem;
+	z-index: 4;
+	border-radius: 0 0 .8rem .8rem;
+	box-shadow: .02rem .02rem .5rem hsl(0, 0%, 30%);
+	background-color: hsl(140, 50%, 60%);
+	box-shadow: .02rem .02rem .5rem hsl(0, 0%, 30%);
+	border-radius: 0 0 .8rem .8rem;
+}
+
+.menu img {
+	display: block;
+	width: 2.5rem;
+	margin: .5rem;
+	float: left;
+	border: .07rem solid hsl(0, 0%, 0%);
+	border-radius: .3rem;
+}
+
+.menu .user {
+	position: absolute;
+	top: 1rem;
+	left: 20%;
+	width: 80%;
+	font-size: 1rem;
+	color: hsl(0, 0%, 100%);
+	text-align: center;
+	text-decoration: none;
+	text-shadow: .09rem .09rem 0 hsl(0, 0%, 0%);
+	text-decoration: none
+}
+
+.menuList {
+	width: 100%;
+	display: none;
+	position: absolute;
+	padding-top: 3.5rem;
+	z-index: -1;
+	border-radius: 0 0 .8rem .8rem;
+	box-shadow: .02rem .02rem .5rem hsl(0, 0%, 30%);
+	background-color: hsl(140, 50%, 60%);
+}
+
+.menu:hover {
+	box-shadow: none;
+}
+
+.menu:hover .menuList {
+	display: block;
+}
+
+.menuList a {
+	display: block;
+	position: relative;
+	float: none;
+	padding: .5rem;
+	color: hsl(0, 0%, 100%);
+	text-align: center;
+	text-decoration: none;
+}
+
+.menuList a:hover {
+	background-color: hsl(140, 40%, 25%);
+}
+
+.menuList a:hover:last-child {
+	border-radius: 0 0 .8rem .8rem;
+}
+
+.chatbot {
+	width: 85%;
+	height: 80%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	overflow: hidden;
+	z-index: 3;
+}
+
+.chatInput {
+	width: 100%;
+	height: 10%;
+	min-height: 4.5rem;
+	position: relative;
+	padding: 1rem;
+	border-radius: .7rem;
+	background-color: hsl(10, 90%, 65%);
+}
+
+.chatInput input[type="text"] {
+	width: 100%;
+	height: 100%;
+	padding: .5rem;
+	padding-right: calc(.5rem + 30px);
+	font-size: 1.2rem;
+	border: 0;
+	border-radius: .4rem;
+	opacity: .8;
+	display: inline-block;
+}
+
+.chatInput input:focus {
+	outline: 0;
+}
+
+.chatInput button {
+	display: block;
+	position: absolute;
+	top: 1.5rem;
+	right: 1.5rem;
+	width: 30px;
+	height: 30px;
+	margin-left: .5rem;
+	cursor: pointer;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	border: none;
+	border-radius: 50%;
+	background-color: hsl(0, 60%, 10%);
+}
+
+.chat {
+	width: 98%;
+	min-width: 90%;
+	height: 90%;
+	margin: 0 auto;
+	padding: 1.5rem;
+	background-color: hsla(165, 95%, 80%, 0.70);
+	overflow: hidden;
+}
+
+.chatlog {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	overflow: auto;
+}
+
+.chatlog p {
+	font-size: 1rem;
+	line-height: 1.3;
+	color: hsl(25, 55%, 15%)
+}
+
+.msgLeft, .msgRight {
+	width: 90%;
+	display: block;
+	margin: 1rem;
+	padding: 1rem;
+	border-radius: .3rem;
+	background-color: hsl(140, 50%, 60%);
+}
+
+.msgRight {
+	margin-left: auto;
+	background-color: hsl(50, 85%, 70%);
+}
+
+.chatlog p:nth-child(n+3) {
+	opacity: .6;
+}
+
+.loginDiv {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: none;
+	z-index: 10;
+	background-color: hsla(0, 60%, 10%, .7);
+}
+
+.loginDiv.abrir {
+	display: grid;
+	align-items: center;
+	justify-items: center;
+}
+
+.loginDiv-conteudo {
+	display: grid;
+	font-family: 'Bree Serif', serif;
+	background-color: hsl(55, 100%, 75%);
+	width: 50%;
+	padding: 1rem;
+	border-radius: .5rem;
+}
+
+.loginDiv-conteudo a {
+	justify-self: end;
+	cursor: pointer;
+	margin-bottom: 1rem;
+}
+
+.loginDiv-conteudo h4 {
+	padding: .5rem;
+	font-size: 2rem;
+	color: hsl(0, 0%, 100%);
+	text-shadow: .09rem .09rem 0 hsl(0, 0%, 0%);
+	border-radius: .3rem;
+	background-color: hsl(0, 100%, 65%);
+	text-align: center;
+}
+
+.loginDiv form {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.loginDiv input {
+	width: 100%;
+	display: block;
+	margin: 1rem auto;
+	padding: 1rem;
+	font-size: 1.5rem;
+	outline: none;
+	border: 1px solid hsl(0, 60%, 10%);
+	border-radius: .5rem;
+}
+
+.loginDiv button, .editarPerfilBtn {
+	float: right;
+	margin-right: 1rem;
+	padding: .5rem;
+	font-size: 1.5rem;
+	border: 0;
+	outline: 0;
+	border-radius: .3rem;
+	background-color: hsl(0, 0%, 90%);
+}
+
+.editarPerfilBtn {
+	margin-right: 0;
+	margin-top: .5rem;
+	font-size: 1rem;
+	padding: .3rem;
+	float: none;
+}
+.loginDiv button:hover, .editarPerfilBtn:hover {
+	cursor: pointer;
+	color: hsl(0, 0%, 100%);
+	background-color: hsl(0, 60%, 10%);
+}
+.adminEditar, .adminEditar:hover {
+	float: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	border: 0 !important;
+	outline: none !important;
+	border-radius: 0 !important;
+	background: none !important;
+}
+
+.footerNav li {
+	display: inline;
+	padding-right: 1rem;
+}
+
+.footerNav li:last-of-type {
+	padding-right: 0;
+}
